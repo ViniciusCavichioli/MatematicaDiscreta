@@ -134,21 +134,42 @@ class Conjunto():
         for i in self.elementos:
             if i not in conjunto.elementos:
                 conjuntoResultado.append(i)
-        return conjuntoResultado
+        result = ""
+        verifica = conjuntoResultado[-1]
+        for i in conjuntoResultado:
+            if i != verifica:
+                result += str(i) + ","
+            else:
+                result += str(i)
+        return print('~',conjunto.nome,"= " "{",result,"}")           
 
     def Diferenca(self, conjunto):
         conjuntoResultado = []
         for i in self.elementos:
             if i not in conjunto.elementos:
                 conjuntoResultado.append(i)
-        return conjuntoResultado
+        result = ""
+        verifica = conjuntoResultado[-1]
+        for i in conjuntoResultado:
+            if i != verifica:
+                result += str(i) + ","
+            else:
+                result += str(i)
+        return print(self.nome,'-',conjunto.nome,"= " "{",result,"}") 
 
     def conjuntoPartes(self):
-        conjuntoResult = []
+        conjuntoResultado = []
         tamanhoConjunto = len(self.elementos)
         for x in range(tamanhoConjunto):
             for i in itertools.combinations(self.elementos, x):
-                conjuntoResult.append(i)
-        return conjuntoResult
+                conjuntoResultado.append(i)
+        result = ""
+        verifica = conjuntoResultado[-1]
+        for i in conjuntoResultado:
+            if i != verifica:
+                result += str(i) + ","
+            else:
+                result += str(i)
+        return print('P(',self.nome,')',"= " "{",result,"}") 
 
 

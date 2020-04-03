@@ -56,20 +56,10 @@ print("B é subconjunto de C? ",C.eh_subconjunto(B))
 print()
 print("A é subconjunto proprio de C? ", C.eh_subconjunto_proprio(A))
 print("B é subconjunto proprio de C? ", C.eh_subconjunto_proprio(B))
-
-def imprimir2(metodo,nome):
-    result = ""
-    verifica = metodo[-1]
-    for i in metodo:
-        if i != verifica:
-            result += str(i) + ","
-        else:
-            result += str(i)
-    print(nome, "= " "{",result,"}")
     
-imprimir2(U.Complemento(B),'Complemento de B')
-imprimir2(U.Diferenca(A),'Diferença de A')
-imprimir2(A.conjuntoPartes(),'ConjuntoParte de A')
+U.Complemento(B)
+U.Diferenca(A)
+A.conjuntoPartes()
 A.uniao(D)
 A.uniao(B)
 A.uniao(A)
